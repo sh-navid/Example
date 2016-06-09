@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web App Title</title>
+    <style>
+        * {
+            font-family: Tahoma;
+        }
+
+        body {
+            margin: 0px 0px 0px 0px;
+        }
+
+        #imagination_left_border {
+            height: 100%;
+            position: fixed;
+            background-color: #363636;
+            width: 75px;
+            right: 40px;
+            top: 0px;
+        }
+
+        #imagination_right_border {
+            height: 100%;
+            position: fixed;
+            background-color: #202020;
+            width: 40px;
+            right: 0px;
+            top: 0px;
+            transition: ease-in 300ms;
+            -o-transition: ease-in 300ms;
+            -moz-transition: ease-in 300ms;
+            -webkit-transition: ease-in 300ms;
+            z-index: 6000;
+        }
+
+            #imagination_right_border:hover {
+                width: 125px;
+            }
+
+        .rotate_text_holder {
+            margin-top: 30px;
+            width: 40px;
+            height: 75px;
+            position: relative;
+        }
+
+            .rotate_text_holder div {
+                transform: rotateZ(90deg);
+                -ms-transform: rotateZ(90deg);
+                -moz-transform: rotateZ(90deg);
+                -webkit-transform: rotateZ(90deg);
+                margin-top: 50px;
+                padding-bottom: 3px;
+            }
+
+                .rotate_text_holder div:hover {
+                    transition: ease-in 300ms;
+                    -o-transition: ease-in 300ms;
+                    -moz-transition: ease-in 300ms;
+                    -webkit-transition: ease-in 300ms;
+                }
+
+                .rotate_text_holder div a {
+                    text-decoration: none;
+                    color: white;
+                }
+
+                    .rotate_text_holder div a:hover {
+                        transition: ease-in 300ms;
+                        -o-transition: ease-in 300ms;
+                        -moz-transition: ease-in 300ms;
+                        -webkit-transition: ease-in 300ms;
+                        color: red;
+                    }
+
+            .rotate_text_holder label {
+                transition: ease-in 300ms;
+                -o-transition: ease-in 300ms;
+                -moz-transition: ease-in 300ms;
+                -webkit-transition: ease-in 300ms;
+                border-radius: 45px 45px;
+                -moz-border-radius: 45px;
+                -webkit-border-radius: 45px 45px;
+                position: absolute;
+                left: 42px;
+                height: 70px;
+                width: 70px;
+                text-align: center;
+                z-index: 9100;
+            }
+
+                .rotate_text_holder label:hover {
+                    background-color: green;
+                }
+
+                    .rotate_text_holder label:hover a {
+                        width: 60px;
+                        height: 60px;
+                        top: 5px;
+                        left: 5px;
+                        opacity: 0.8;
+                        line-height: 55px;
+                        font-weight: bold;
+                        font-size: xx-large;
+                        transform: rotateZ(360deg);
+                        -ms-transform: rotateZ(360deg);
+                        -moz-transform: rotateZ(360deg);
+                        -webkit-transform: rotateZ(360deg);
+                    }
+
+                .rotate_text_holder label a {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 45px 45px;
+                    -moz-border-radius: 45px;
+                    -webkit-border-radius: 45px 45px;
+                    transition: ease-in 300ms;
+                    -o-transition: ease-in 300ms;
+                    -moz-transition: ease-in 300ms;
+                    -webkit-transition: ease-in 300ms;
+                    background-color: #ffffff;
+                    text-decoration: none;
+                    vertical-align: central;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    opacity: 0.3;
+                    line-height: 65px;
+                    z-index: 9200;
+                    font-weight: bold;
+                    font-size: x-large;
+                }
+
+                .rotate_text_holder label span {
+                    overflow: hidden;
+                    width: 0px;
+                    transition: ease-in 300ms;
+                    -o-transition: ease-in 300ms;
+                    -moz-transition: ease-in 300ms;
+                    -webkit-transition: ease-in 300ms;
+                    display: inline-block;
+                    height: 70px;
+                    position: absolute;
+                    left: 70px;
+                    top: 0px;
+                    border-radius: 45px 45px;
+                    -moz-border-radius: 45px;
+                    -webkit-border-radius: 45px 45px;
+                    opacity: 0;
+                }
+
+                .rotate_text_holder label:hover span {
+                    overflow: hidden;
+                    width: 300px;
+                    left: -230px;
+                    z-index: 9000;
+                    opacity: .8;
+                    line-height: 70px;
+                    color: white;
+                    font-weight: bold;
+                    font-size: large;
+                }
+
+        #main_table {
+            width: 100%;
+            height: 100%;
+            padding: 0px 0px 0px 0px;
+            border-spacing: 0px 0px;
+            margin: 0px 0px 0px 0px;
+        }
+
+        #left_menu {
+            background-color: #f1f1f1;
+            box-shadow: 0px 2px 7px #888888;
+            -moz-box-shadow: 0px 2px 7px #888888;
+            -webkit-box-shadow: 0px 2px 7px #888888;
+            width: 290px;
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        #right_menu_top {
+            background-color: #f1f1f1;
+            box-shadow: 0px 2px 7px #888888;
+            -moz-box-shadow: 0px 2px 7px #888888;
+            -webkit-box-shadow: 0px 2px 7px #888888;
+            width: 100%;
+            height: 80px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        #right_menu_mid {
+            background-color: #f1f1f1;
+            box-shadow: 0px 2px 7px #888888;
+            -moz-box-shadow: 0px 2px 7px #888888;
+            -webkit-box-shadow: 0px 2px 7px #888888;
+            width: 100%;
+            height: 400px;
+            margin-top: 5px;
+        }
+
+        .left_link {
+            width: 250px;
+            height: 80px;
+            line-height: 80px;
+            margin-left: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #363636;
+            text-align: center;
+            position: relative;
+            transition: ease-out 400ms;
+            -o-transition: ease-out 400ms;
+            -moz-transition: ease-out 400ms;
+            -webkit-transition: ease-out 400ms;
+        }
+
+            .left_link:hover {
+                line-height: 100px;
+            }
+
+                .left_link:hover label {
+                    height: 30px;
+                }
+
+            .left_link label {
+                width: 250px;
+                height: 2px;
+                line-height: 30px;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                opacity: .5;
+                background-color: #f1f1f1;
+                overflow: hidden;
+                transition: ease-in 400ms;
+                -o-transition: ease-in 400ms;
+                -moz-transition: ease-in 400ms;
+                -webkit-transition: ease-in 400ms;
+            }
+
+                .left_link label:hover {
+                    background-color: black;
+                }
+
+            .left_link a {
+                text-decoration: none;
+                color: #363636;
+                transition: ease-in 300ms;
+                -o-transition: ease-in 300ms;
+                -moz-transition: ease-in 300ms;
+                -webkit-transition: ease-in 300ms;
+            }
+
+                .left_link a:hover {
+                    text-decoration: none;
+                    color: #ffffff;
+                }
+
+        #left_menu_fr {
+            background-color: #f1f1f1;
+            box-shadow: 0px 2px 7px #888888;
+            -moz-box-shadow: 0px 2px 7px #888888;
+            -webkit-box-shadow: 0px 2px 7px #888888;
+            width: 290px;
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-top: 20px;
+            margin-top: 5px;
+        }
+
+        .left_box {
+            width: 67px;
+            height: 67px;
+            background-color: #f4f4f4;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            transition: ease-out 400ms;
+            -o-transition: ease-out 400ms;
+            -moz-transition: ease-out 400ms;
+            -webkit-transition: ease-out 400ms;
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #909090;
+        }
+
+            .left_box img {
+                width: 67px;
+                height: 67px;
+            }
+
+            .left_box label {
+                height: 25px;
+                width: 67px;
+                opacity: .5;
+                line-height: 25px;
+                overflow: hidden;
+                top: 67px;
+                left: 0px;
+                position: absolute;
+                background-color: gray;
+                transition: ease-out 400ms;
+                -o-transition: ease-out 400ms;
+                -moz-transition: ease-out 400ms;
+                -webkit-transition: ease-out 400ms;
+            }
+
+            .left_box:hover label {
+                top: 42px;
+                opacity: .8;
+            }
+
+            .left_box label a {
+                text-decoration: none;
+                color: black;
+                transition: ease-out 200ms;
+                -o-transition: ease-out 200ms;
+                -moz-transition: ease-out 200ms;
+                -webkit-transition: ease-out 200ms;
+            }
+
+            .left_box:hover label a {
+                text-decoration: none;
+                color: white;
+            }
+
+        #right_menu_post {
+            width: 100%;
+            height: 100%;
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+
+        .post_body {
+            background-color: #ffea00;
+            width: 100%;
+            min-height: 120px;
+            margin-top: 65px;
+            position: relative;
+            border-top-left-radius: 45px 45px;
+            -moz-border-radius-topleft: 45px;
+            -webkit-border-top-left-radius: 45px 45px;
+            transition: ease-in 200ms;
+            -o-transition: ease-in 200ms;
+            -moz-transition: ease-in 200ms;
+            -webkit-transition: ease-in 200ms;
+        }
+
+            .post_body:hover {
+                background-color: white;
+                box-shadow: 0px 2px 7px #888888;
+                -moz-box-shadow: 0px 2px 7px #888888;
+                -webkit-box-shadow: 0px 2px 7px #888888;
+            }
+
+                .post_body:hover .post_title {
+                    /*top: -60px;*/
+                    /*right:600px;*/
+                    right: 350px;
+                }
+
+        .post_more {
+            transition: ease-in 300ms;
+            -o-transition: ease-in 300ms;
+            -moz-transition: ease-in 300ms;
+            -webkit-transition: ease-in 300ms;
+            border-radius: 45px 45px;
+            -moz-border-radius: 45px;
+            -webkit-border-radius: 45px 45px;
+            width: 44px;
+            min-height: 44px;
+            line-height: 42px;
+            border: 12px solid white;
+            position: absolute;
+            font-size: smaller;
+            top: -2px;
+            left: -2px;
+            text-align: center;
+        }
+
+            .post_more a {
+                text-decoration: none;
+                color: #888888;
+            }
+
+            .post_more:hover {
+                background-color: #ffea00;
+            }
+
+        .post_title {
+            position: absolute;
+            top: -30px;
+            right: 460px;
+            z-index: -1;
+            transition: ease-in 300ms;
+            -o-transition: ease-in 300ms;
+            -moz-transition: ease-in 300ms;
+            -webkit-transition: ease-in 300ms;
+            cursor: pointer;
+        }
+
+        .post_title_left, .tri_left {
+            position: absolute;
+            top: -1px;
+            left: 2px;
+            display: inline-block;
+            overflow: hidden;
+            width: 0px;
+            height: 0px;
+            border-top: 40px solid transparent;
+            border-bottom: 40px solid transparent;
+            border-right: 40px solid #00c6ff;
+            border-radius: 10px 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px 10px;
+            padding: 0px 0px 0px 0px;
+            margin: 0px 0px 0px 0px;
+            word-spacing: 0px 0px;
+            transform: rotateZ(210deg);
+            -ms-transform: rotateZ(210deg);
+            -moz-transform: rotateZ(210deg);
+            -webkit-transform: rotateZ(210deg);
+        }
+
+        .post_title_right, .tri_right, .tri_down {
+            position: absolute;
+            top: -1px;
+            left: 298px;
+            display: inline-block;
+            overflow: hidden;
+            width: 0px;
+            height: 0px;
+            border-top: 40px solid transparent;
+            border-bottom: 40px solid transparent;
+            border-right: 40px solid #00c6ff;
+            border-radius: 10px 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px 10px;
+            padding: 0px 0px 0px 0px;
+            margin: 0px 0px 0px 0px;
+            word-spacing: 0px 0px;
+            transform: rotateZ(-30deg);
+            -ms-transform: rotateZ(-30deg);
+            -moz-transform: rotateZ(-30deg);
+            -webkit-transform: rotateZ(-30deg);
+        }
+
+        .post_title_top {
+            position: absolute;
+            top: -2px;
+            left: 24px;
+            display: inline-block;
+            overflow: hidden;
+            width: 292px;
+            height: 60px;
+            background-color: #00c6ff;
+            border-radius: 3px 3px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px 3px;
+            line-height: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .post_data {
+            margin-left: 80px;
+            color: #363636;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .up_tri {
+            position: absolute;
+            right: 64px;
+            top: -28px;
+        }
+
+        .dn_tri {
+            transform: rotateZ(180deg);
+            -ms-transform: rotateZ(180deg);
+            -moz-transform: rotateZ(180deg);
+            -webkit-transform: rotateZ(180deg);
+            position: absolute;
+            right: 70px;
+            top: 33px;
+        }
+
+        .tri_left, .tri_left_ {
+            left: 0px;
+            top: -1px;
+            position: absolute;
+            display: inline-block;
+            overflow: hidden;
+            width: 0px;
+            height: 0px;
+            border-top: 40px solid transparent;
+            border-bottom: 40px solid transparent;
+            border-right: 40px solid #ffea00;
+            border-radius: 4px 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px 4px;
+            padding: 0px 0px 0px 0px;
+            margin: 0px 0px 0px 0px;
+            word-spacing: 0px 0px;
+            transform: rotateZ(210px);
+            -ms-transform: rotateZ(210px);
+            -moz-transform: rotateZ(210px);
+            -webkit-transform: rotateZ(210px);
+        }
+
+        .tri_right, .tri_right_ {
+            left: 6px;
+            top: -1px;
+            position: absolute;
+            display: inline-block;
+            overflow: hidden;
+            width: 0px;
+            height: 0px;
+            border-top: 40px solid transparent;
+            border-bottom: 40px solid transparent;
+            border-right: 40px solid #ffea00;
+            border-radius: 4px 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px 4px;
+            padding: 0px 0px 0px 0px;
+            margin: 0px 0px 0px 0px;
+            word-spacing: 0px 0px;
+            transform: rotateZ(-30deg);
+            -ms-transform: rotateZ(-30deg);
+            -moz-transform: rotateZ(-30deg);
+            -webkit-transform: rotateZ(-30deg);
+        }
+
+        .tri_down, .tri_down_ {
+            left: 3px;
+            top: 5px;
+            position: absolute;
+            display: inline-block;
+            overflow: hidden;
+            width: 0px;
+            height: 0px;
+            border-top: 40px solid transparent;
+            border-bottom: 40px solid transparent;
+            border-right: 40px solid #ffea00;
+            border-radius: 4px 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px 4px;
+            padding: 0px 0px 0px 0px;
+            margin: 0px 0px 0px 0px;
+            word-spacing: 0px 0px;
+            transform: rotateZ(90deg);
+            -ms-transform: rotateZ(90deg);
+            -moz-transform: rotateZ(90deg);
+            -webkit-transform: rotateZ(90deg);
+        }
+
+        .dt, .ut, .ct {
+            right: -35px;
+            top: 10px;
+            position: absolute;
+            z-index: 300;
+        }
+
+        .dt {
+            transition: ease-in 300ms;
+            -o-transition: ease-in 300ms;
+            -moz-transition: ease-in 300ms;
+            -webkit-transition: ease-in 300ms;
+        }
+
+            .dt:hover {
+                top: 0px;
+                cursor: pointer;
+            }
+
+        .ct {
+            color: white;
+            right: -55px;
+            top: 50px;
+            font-weight: bold;
+            transition: ease-in 300ms;
+            -o-transition: ease-in 300ms;
+            -moz-transition: ease-in 300ms;
+            -webkit-transition: ease-in 300ms;
+        }
+
+            .ct:hover {
+                top: 45px;
+            }
+
+        .ut {
+            transform: rotateZ(180deg);
+            -ms-transform: rotateZ(180deg);
+            -moz-transform: rotateZ(180deg);
+            -webkit-transform: rotateZ(180deg);
+            top: 110px;
+            right: -57px;
+            transition: ease-in 300ms;
+            -o-transition: ease-in 300ms;
+            -moz-transition: ease-in 300ms;
+            -webkit-transition: ease-in 300ms;
+        }
+
+            .ut:hover {
+                cursor: pointer;
+                top: 120px;
+            }
+
+        .tri_left_ {
+            top: 0px;
+            left: 0px;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 20px solid #ef5b3e;
+            transform: rotateZ(210deg);
+            -ms-transform: rotateZ(210deg);
+            -moz-transform: rotateZ(210deg);
+            -webkit-transform: rotateZ(210deg);
+        }
+
+        .tri_right_ {
+            top: 0px;
+            left: 3px;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 20px solid #ef693e;
+            transform: rotateZ(-30deg);
+            -ms-transform: rotateZ(-30deg);
+            -moz-transform: rotateZ(-30deg);
+            -webkit-transform: rotateZ(-30deg);
+        }
+
+        .tri_down_ {
+            top: 3px;
+            left: 1px;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 20px solid #ef843e;
+            transform: rotateZ(90deg);
+            -ms-transform: rotateZ(90deg);
+            -moz-transform: rotateZ(90deg);
+            -webkit-transform: rotateZ(90deg);
+        }
+
+        .up_tri_txt, .dn_tri_txt, .tm_tri_txt {
+            position: absolute;
+            z-index: 3000;
+            font-size: x-large;
+            top: 25px;
+            left: 7px;
+            font-weight: bold;
+        }
+
+        .up_tri_txt {
+            color: #ffea00;
+        }
+
+        .dn_tri_txt {
+            color: #ffffff;
+        }
+
+        .tm_tri_txt {
+            font-size: medium;
+            transform: rotateZ(60deg);
+            -ms-transform: rotateZ(60deg);
+            -moz-transform: rotateZ(60deg);
+            -webkit-transform: rotateZ(60deg);
+            top: 20px;
+            left: 30px;
+            color: #202020;
+        }
+
+        #avatar {
+            background-color: white;
+            width: 190px;
+            height: 190px;
+            position: absolute;
+            right: 50px;
+            top: 100px;
+            border-radius: 8px 8px;
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px 8px;
+            box-shadow: 0px 0px 40px #00a9ff;
+            -moz-box-shadow: 0px 0px 40px #00a9ff;
+            -webkit-box-shadow: 0px 0px 40px #00a9ff;
+            overflow: hidden;
+            transition: ease-in 300ms;
+            -o-transition: ease-in 300ms;
+            -moz-transition: ease-in 300ms;
+            -webkit-transition: ease-in 300ms;
+            opacity: .8;
+        }
+
+            #avatar:hover {
+                opacity: 1;
+            }
+
+                #avatar:hover #face, #avatar:hover #bod {
+                    background-color: white;
+                    box-shadow: 0px 0px 40px #00a9ff;
+                    -moz-box-shadow: 0px 0px 40px #00a9ff;
+                    -webkit-box-shadow: 0px 0px 40px #00a9ff;
+                }
+
+        #face {
+            border-radius: 45px 45px;
+            -moz-border-radius: 45px;
+            -webkit-border-radius: 45px 45px;
+            background-color: #0590e8;
+            opacity: .8;
+            width: 75px;
+            height: 75px;
+            position: absolute;
+            left: 55px;
+            top: 35px;
+            transition: ease-in 300ms;
+            -o-transition: ease-in 300ms;
+            -moz-transition: ease-in 300ms;
+            -webkit-transition: ease-in 300ms;
+            z-index: 1300;
+        }
+
+        #bod {
+            border-radius: 130px 130px;
+            -moz-border-radius: 130px;
+            -webkit-border-radius: 130px 130px;
+            background-color: #0590e8;
+            opacity: .8;
+            width: 185px;
+            height: 185px;
+            position: absolute;
+            left: 3px;
+            top: 100px;
+            transition: ease-in 300ms;
+            -o-transition: ease-in 300ms;
+            -moz-transition: ease-in 300ms;
+            -webkit-transition: ease-in 300ms;
+            z-index: 1200;
+        }
+
+        #bod_shadow {
+            box-shadow: 0px -4px 40px #ffffff;
+            -moz-box-shadow: 0px 4px 40px #ffffff;
+            -webkit-box-shadow: 0px 4px 40px #ffffff;
+            z-index: 1400;
+            position: absolute;
+            width: 190px;
+            left: 0px;
+            top: 185px;
+            height: 10px;
+        }
+
+        #btn_holder {
+            position: relative;
+            top: 120px;
+            left: 80px;
+        }
+
+        .btn {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #ff006e;
+            border: 4px solid #f1f1f1;
+            opacity: .9;
+            border-radius: 8px 8px;
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px 8px;
+            box-shadow: 0px 0px 10px #888888;
+            -moz-box-shadow: 0px 0px 10px #888888;
+            -webkit-box-shadow: 0px 0px 10px #888888;
+            transition: ease-in 400ms;
+            -o-transition: ease-in 400ms;
+            -moz-transition: ease-in 400ms;
+            -webkit-transition: ease-in 400ms;
+            transform: rotateZ(40deg);
+            -ms-transform: rotateZ(40deg);
+            -moz-transform: rotateZ(40deg);
+            -webkit-transform: rotateZ(40deg);
+        }
+
+            .btn:hover {
+                cursor: pointer;
+                transform: rotateZ(360deg);
+                -ms-transform: rotateZ(360deg);
+                -moz-transform: rotateZ(360deg);
+                -webkit-transform: rotateZ(360deg);
+                width: 60px;
+                height: 60px;
+            }
+
+            .btn label {
+                position: absolute;
+                top: 55px;
+                left: 0px;
+                transition: ease-out 500ms;
+                -o-transition: ease-out 500ms;
+                -moz-transition: ease-out 500ms;
+                -webkit-transition: ease-out 500ms;
+            }
+
+            .btn:hover label {
+                top: -30px;
+                left: 50px;
+                font-weight: bold;
+                font-size: large;
+            }
+
+        .tn {
+            position: absolute;
+            left: 40px;
+        }
+
+        #t1 {
+            top: 0px;
+            color: #888888;
+        }
+
+        #t2 {
+            top: 25px;
+            left: 50px;
+            color: #ffd800;
+        }
+
+        #t3 {
+            top: 300px;
+            left: 250px;
+            color: #0094ff;
+            cursor: pointer;
+        }
+
+        #t4 {
+            top: 325px;
+            left: 250px;
+            color: #4cff00;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <table id="main_table">
+        <tr>
+            <td style="width: 300px; height: 100%; vertical-align: super">
+                <div id="left_menu">
+                    <div class="left_link" style="background-color: #00c6ff; margin-top: 0px;">
+                        <label><a href="#">Sign up</a></label>
+                        <a href="#">Services</a>
+                    </div>
+                    <div class="left_link" style="background-color: #00ffa2">
+                        <label><a href="#">Sign in</a></label>
+                        <a href="#">Apps Online</a>
+                    </div>
+                    <div class="left_link" style="background-color: #b4ff00">
+                        <label><a href="#">Help us</a></label>
+                        <a href="#">Apps Store</a>
+                    </div>
+                    <div class="left_link" style="background-color: #ffe400">
+                        <label><a href="#">Share us</a></label>
+                        <a href="#">Sources</a>
+                    </div>
+                </div>
+                <div id="left_menu_fr">
+                    <div class="left_box">
+                        <label><a href="#">Name</a></label><img />
+                    </div>
+                    <div class="left_box">
+                        <label><a href="#">Name</a></label><img />
+                    </div>
+                    <div class="left_box">
+                        <label><a href="#">Name</a></label><img />
+                    </div>
+                    <div class="left_box">
+                        <label><a href="#">Name</a></label><img />
+                    </div>
+                    <div class="left_box">
+                        <label><a href="#">Name</a></label><img />
+                    </div>
+                    <div class="left_box">
+                        <label><a href="#">Name</a></label><img />
+                    </div>
+                    <div class="left_box">
+                        <label><a href="#">Name</a></label><img />
+                    </div>
+                    <div class="left_box">
+                        <label><a href="#">Name</a></label><img />
+                    </div>
+                    <div class="left_box">
+                        <label><a href="#">Name</a></label><img />
+                    </div>
+                    <div class="left_box">
+                        <label><a href="#">Name</a></label><img />
+                    </div>
+                    <div class="left_box">
+                        <label><a href="#">Name</a></label><img />
+                    </div>
+                    <div class="left_box">
+                        <label><a href="#">Name</a></label><img />
+                    </div>
+                </div>
+            </td>
+            <td style="height: 100%; vertical-align: top">
+                <div id="right_menu_top">
+                    <h1 style="display: inline-block; color: orange"></h1>
+                    <h1 style="display: inline-block; color: #4d91df">Web App Title</h1>
+                </div>
+                <div id="right_menu_mid" style="position: relative;">
+                    <h4 id="t1" class="tn">CREATIVITY</h4>
+                    <h5 id="t2" class="tn">JUST FOR TEST <span style="color: #454545"> by SH-NAVID</span></h5>
+                    <h5 id="t3" class="tn">Just Sign in</h5>
+                    <h5 id="t4" class="tn"><span style="color: #454545">Mabye Sign up</span></h5>
+                    <div id="avatar">
+                        <div id="face"></div>
+                        <div id="bod"></div>
+                        <div id="bod_shadow"></div>
+                    </div>
+                    <div id="btn_holder">
+                        <div class="btn" style="top: 0px; left: 0px; background-color: #0094ff;">
+                            <label style="color: #0094ff">Work</label>
+                        </div>
+                        <div class="btn" style="top: 100px; left: 100px; background-color: orange;">
+                            <label style="color: orange">Education</label>
+                        </div>
+                        <div class="btn" style="top: 100px; left: 0px;">
+                            <label style="color: #ff006e">Life</label>
+                        </div>
+                        <div class="btn" style="top: 0px; left: 100px; background-color: #4cff00;">
+                            <label style="color: #4cff00">Hobby</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="right_menu_post">
+                    <div class="post_body">
+                        <label class="post_more"><a href="http://">more</a></label>
+                        <label class="post_data">Text ...</label>
+                        <div class="post_title">
+                            <label class="post_title_left"></label>
+                            <label class="post_title_right"></label>
+                            <label class="post_title_top">Title Data</label>
+                        </div>
+                        <div class="dn_tri">
+                            <label class="dn_tri_txt">01</label>
+                            <label class="tri_left"></label>
+                            <label class="tri_right"></label>
+                            <label class="tri_down"></label>
+                        </div>
+                        <div class="up_tri">
+                            <label class="tm_tri_txt">13:23</label>
+                            <label class="up_tri_txt">12</label>
+                            <label class="tri_left" style="border-right-color: white"></label>
+                            <label class="tri_right" style="border-right-color: white"></label>
+                            <label class="tri_down" style="border-right-color: white"></label>
+                        </div>
+                        <div class="dt">
+                            <label class="tri_left_"></label>
+                            <label class="tri_right_"></label>
+                            <label class="tri_down_"></label>
+                        </div>
+                        <div class="ct">
+                            <label>42</label>
+                        </div>
+                        <div class="ut">
+                            <label class="tri_left_"></label>
+                            <label class="tri_right_"></label>
+                            <label class="tri_down_"></label>
+                        </div>
+                    </div>
+                    <div class="post_body">
+                        <label class="post_more"><a href="http://">more</a></label>
+                        <label class="post_data">Text ...</label>
+                        <div class="post_title">
+                            <label class="post_title_left"></label>
+                            <label class="post_title_right"></label>
+                            <label class="post_title_top">Title Data</label>
+                        </div>
+                        <div class="dn_tri">
+                            <label class="dn_tri_txt">01</label>
+                            <label class="tri_left"></label>
+                            <label class="tri_right"></label>
+                            <label class="tri_down"></label>
+                        </div>
+                        <div class="up_tri">
+                            <label class="tm_tri_txt">13:23</label>
+                            <label class="up_tri_txt">12</label>
+                            <label class="tri_left" style="border-right-color: white"></label>
+                            <label class="tri_right" style="border-right-color: white"></label>
+                            <label class="tri_down" style="border-right-color: white"></label>
+                        </div>
+                        <div class="dt">
+                            <label class="tri_left_"></label>
+                            <label class="tri_right_"></label>
+                            <label class="tri_down_"></label>
+                        </div>
+                        <div class="ct">
+                            <label>42</label>
+                        </div>
+                        <div class="ut">
+                            <label class="tri_left_"></label>
+                            <label class="tri_right_"></label>
+                            <label class="tri_down_"></label>
+                        </div>
+                    </div>
+                    <div class="post_body">
+                        <label class="post_more"><a href="http://">more</a></label>
+                        <label class="post_data">Text ...</label>
+                        <div class="post_title">
+                            <label class="post_title_left"></label>
+                            <label class="post_title_right"></label>
+                            <label class="post_title_top">Title Data</label>
+                        </div>
+                        <div class="dn_tri">
+                            <label class="dn_tri_txt">01</label>
+                            <label class="tri_left"></label>
+                            <label class="tri_right"></label>
+                            <label class="tri_down"></label>
+                        </div>
+                        <div class="up_tri">
+                            <label class="tm_tri_txt">13:23</label>
+                            <label class="up_tri_txt">12</label>
+                            <label class="tri_left" style="border-right-color: white"></label>
+                            <label class="tri_right" style="border-right-color: white"></label>
+                            <label class="tri_down" style="border-right-color: white"></label>
+                        </div>
+                        <div class="dt">
+                            <label class="tri_left_"></label>
+                            <label class="tri_right_"></label>
+                            <label class="tri_down_"></label>
+                        </div>
+                        <div class="ct">
+                            <label>42</label>
+                        </div>
+                        <div class="ut">
+                            <label class="tri_left_"></label>
+                            <label class="tri_right_"></label>
+                            <label class="tri_down_"></label>
+                        </div>
+                    </div>
+                    <div class="post_body">
+                        <label class="post_more"><a href="http://">more</a></label>
+                        <label class="post_data">Text ...</label>
+                        <div class="post_title">
+                            <label class="post_title_left"></label>
+                            <label class="post_title_right"></label>
+                            <label class="post_title_top">Title Data</label>
+                        </div>
+                        <div class="dn_tri">
+                            <label class="dn_tri_txt">01</label>
+                            <label class="tri_left"></label>
+                            <label class="tri_right"></label>
+                            <label class="tri_down"></label>
+                        </div>
+                        <div class="up_tri">
+                            <label class="tm_tri_txt">13:23</label>
+                            <label class="up_tri_txt">12</label>
+                            <label class="tri_left" style="border-right-color: white"></label>
+                            <label class="tri_right" style="border-right-color: white"></label>
+                            <label class="tri_down" style="border-right-color: white"></label>
+                        </div>
+                        <div class="dt">
+                            <label class="tri_left_"></label>
+                            <label class="tri_right_"></label>
+                            <label class="tri_down_"></label>
+                        </div>
+                        <div class="ct">
+                            <label>42</label>
+                        </div>
+                        <div class="ut">
+                            <label class="tri_left_"></label>
+                            <label class="tri_right_"></label>
+                            <label class="tri_down_"></label>
+                        </div>
+                    </div>
+                    <div class="post_body">
+                        <label class="post_more"><a href="http://">more</a></label>
+                        <label class="post_data">Text ...</label>
+                        <div class="post_title">
+                            <label class="post_title_left"></label>
+                            <label class="post_title_right"></label>
+                            <label class="post_title_top">Title Data</label>
+                        </div>
+                        <div class="dn_tri">
+                            <label class="dn_tri_txt">01</label>
+                            <label class="tri_left"></label>
+                            <label class="tri_right"></label>
+                            <label class="tri_down"></label>
+                        </div>
+                        <div class="up_tri">
+                            <label class="tm_tri_txt">13:23</label>
+                            <label class="up_tri_txt">12</label>
+                            <label class="tri_left" style="border-right-color: white"></label>
+                            <label class="tri_right" style="border-right-color: white"></label>
+                            <label class="tri_down" style="border-right-color: white"></label>
+                        </div>
+                        <div class="dt">
+                            <label class="tri_left_"></label>
+                            <label class="tri_right_"></label>
+                            <label class="tri_down_"></label>
+                        </div>
+                        <div class="ct">
+                            <label>42</label>
+                        </div>
+                        <div class="ut">
+                            <label class="tri_left_"></label>
+                            <label class="tri_right_"></label>
+                            <label class="tri_down_"></label>
+                        </div>
+                    </div>
+                    <div class="post_body">
+                        <label class="post_more"><a href="http://">more</a></label>
+                        <label class="post_data">Text ...</label>
+                        <div class="post_title">
+                            <label class="post_title_left"></label>
+                            <label class="post_title_right"></label>
+                            <label class="post_title_top">Title Data</label>
+                        </div>
+                        <div class="dn_tri">
+                            <label class="dn_tri_txt">01</label>
+                            <label class="tri_left"></label>
+                            <label class="tri_right"></label>
+                            <label class="tri_down"></label>
+                        </div>
+                        <div class="up_tri">
+                            <label class="tm_tri_txt">13:23</label>
+                            <label class="up_tri_txt">12</label>
+                            <label class="tri_left" style="border-right-color: white"></label>
+                            <label class="tri_right" style="border-right-color: white"></label>
+                            <label class="tri_down" style="border-right-color: white"></label>
+                        </div>
+                        <div class="dt">
+                            <label class="tri_left_"></label>
+                            <label class="tri_right_"></label>
+                            <label class="tri_down_"></label>
+                        </div>
+                        <div class="ct">
+                            <label>42</label>
+                        </div>
+                        <div class="ut">
+                            <label class="tri_left_"></label>
+                            <label class="tri_right_"></label>
+                            <label class="tri_down_"></label>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td style="width: 120px; height: 100%;">
+                <div id="imagination_left_border">
+                </div>
+                <div id="imagination_right_border">
+                    <div class="rotate_text_holder">
+                        <label style="top: -20px; background-color: #4d91df;">
+                            <a href="#" style="color: #4d91df;">12</a>
+                            <span style="background-color: #4d91df;">New Notifications</span>
+                        </label>
+                        <label style="top: 060px; background-color: #f0dd3f;">
+                            <a href="#" style="color: #f0dd3f;">03</a>
+                            <span style="background-color: #f0dd3f;">New Warnings</span>
+                        </label>
+                        <label style="top: 140px; background-color: #ef5b3e;">
+                            <a href="#" style="color: #ef5b3e;">04</a>
+                            <span style="background-color: #ef5b3e;">New Invitations</span>
+                        </label>
+                        <label style="top: 220px; background-color: #f13fa8;">
+                            <a href="#" style="color: #f13fa8;">08</a>
+                            <span style="background-color: #f13fa8;">New Contents</span>
+                        </label>
+                        <label style="top: 300px; background-color: #7cf03c;">
+                            <a href="#" style="color: #7cf03c;">05</a>
+                            <span style="background-color: #7cf03c;">New Emails</span>
+                        </label>
+                        <div>
+                            <a href="#">Home</a>
+                        </div>
+                        <div>
+                            <span style="margin-left: 15px;">|</span>
+                        </div>
+                        <div>
+                            <a href="#">About&nbsp;us</a>
+                        </div>
+                        <div>
+                            <span style="margin-left: 30px;">|</span>
+                        </div>
+                        <div>
+                            <a href="#">Contact&nbsp;us</a>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
