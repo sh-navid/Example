@@ -11,10 +11,7 @@
     "url": "git+https://github.com/sh-navid/Practice.git"
   },
   "author": "",
-  "license": "SEE LICENSE IN LICENSE",
-  "bugs": {
-    "url": "https://github.com/sh-navid/Practice/issues"
-  },
+  "license": "See LICENSE File",
   "homepage": "https://github.com/sh-navid/Practice#readme",
   "dependencies": {
     "express": "^4.17.1"
