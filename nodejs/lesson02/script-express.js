@@ -16,4 +16,14 @@ app.get("/ver", (q, r) => {
     r.send("Version: 01");
 });
 
+//API Versioning
+
+app.get("/api/v01/list", (q, r) => {
+    r.send("API V01, List Function");
+});
+
+app.get("/api/v02/list", (q, r) => {
+    r.send("API V02, List Function");
+});
+
 app.listen(3000);
