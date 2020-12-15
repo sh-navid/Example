@@ -10,7 +10,6 @@ const db = new dt({ filename: 'nodejs/data/nedb', autoload: true });
 
 
 db.loadDatabase((err) => {
-    // Now commands will be executed
     if (err)
         console.log(err + "");
     else
@@ -26,9 +25,10 @@ app.get("/list", (q, r) => {
 
 app.get("/remove/:id", (q, r) => {
     db.remove({ id: parseInt(q.params.id) }, {}, (err, numRemoved) => {
-        if(err)
-            r.send(err);//BAD Practice
-        r.send("Removed");
+        if (err)
+            //BAD Practice - do not send error over API
+            r.send(err);
+        r.send("Removed: " + numRemoved);
     });
 });
 
@@ -46,11 +46,11 @@ app.get("/update/:id/:newName", (q, r) => {
 
         try {
             dta.name = q.params.newName;
-            db.update({ id: parseInt(q.params.id) }, dta, (err2, dta2) => {
-                r.send(JSON.stringify(dta2));
+            db.update({ id: parseInt(q.params.id) }, dta, (err2, numUpdated) => {
+                r.send("Updated: " + JSON.stringify(numUpdated));
             });
         } catch (e) {
-            //BAD PRACTICE
+            //BAD Practice - do not send error over API
             r.send(e + "");
         }
     });
