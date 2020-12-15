@@ -2,29 +2,28 @@
 //Sequelize
 
 const FORCE_DATABASE_UPDATE = true;
-const DB_TABLE_SEED = true;
 
 //yarn add sqlite3
 //yarn add sequelize
 const { Sequelize } = require('sequelize');
-const seq = new Sequelize('nodejs/data/sqdb', '', '', {
+const seq = new Sequelize('db', '', '', {
     host: 'localhost',
-    storage: 'db.sqlite',
+    storage: 'nodejs/data/db.sqlite',
     dialect: 'sqlite',
 });
 
 
-let LevelTable = seq.define(DB_TABLE_SEED + 'Level', {
+let LevelTable = seq.define('Level', {
     ID: {
         type: Sequelize.INTEGER,
         primaryKey: true,
     },
     Name: {
         type: Sequelize.STRING,
-    },
+    }
 });
 
-let CourseTable = seq.define(DB_TABLE_SEED + 'Course', {
+let CourseTable = seq.define('Course', {
     ID: {
         type: Sequelize.INTEGER,
         primaryKey: true
@@ -40,7 +39,7 @@ let CourseTable = seq.define(DB_TABLE_SEED + 'Course', {
     },
 });
 
-let LessonTable = seq.define(DB_TABLE_SEED + 'Lesson', {
+let LessonTable = seq.define('Lesson', {
     ID: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -60,16 +59,16 @@ let LessonTable = seq.define(DB_TABLE_SEED + 'Lesson', {
 // LevelTable.hasMany(CourseTable, {
 //     foreignKey: 'LevelID'
 // });
-
+//
 // CourseTable.belongsTo(LevelTable, {
 //     foreignKey: 'LevelID'
 // });
-
+//
 // //-----------CONSTRAINTS--------------
 // CourseTable.hasMany(LessonTable, {
 //     foreignKey: 'CourseID'
 // });
-
+//
 // LessonTable.belongsTo(CourseTable, {
 //     foreignKey: 'CourseID'
 // });
@@ -94,14 +93,20 @@ let run = async () => {
     await LessonTable.create({ ID: 3, Name: "Lesson AB_1", CourseID: 2 });
     await LessonTable.create({ ID: 4, Name: "Lesson AB_2", CourseID: 2 });
     await LessonTable.create({ ID: 5, Name: "Lesson BA_1", CourseID: 3 });
-    await LessonTable.create({ ID: 5, Name: "Lesson BA_2", CourseID: 3 });
-    await LessonTable.create({ ID: 5, Name: "Lesson BB_1", CourseID: 4 });
-    await LessonTable.create({ ID: 5, Name: "Lesson CA_1", CourseID: 5 });
-    await LessonTable.create({ ID: 5, Name: "Lesson CA_2", CourseID: 5 });
+    await LessonTable.create({ ID: 6, Name: "Lesson BA_2", CourseID: 3 });
+    await LessonTable.create({ ID: 7, Name: "Lesson BB_1", CourseID: 4 });
+    await LessonTable.create({ ID: 8, Name: "Lesson CA_1", CourseID: 5 });
+    await LessonTable.create({ ID: 9, Name: "Lesson CA_2", CourseID: 5 });
 
-    let res;
-    res = await LessonTable.findByPk(2);
-    console.log(res);
+    const { count, rows } = await LevelTable.findAndCountAll({
+
+    });
+    console.log(count);
+    rows.forEach(el => {
+        console.log("___________");
+        console.log(el.dataValues);
+    });
+
 }
 
 run();
