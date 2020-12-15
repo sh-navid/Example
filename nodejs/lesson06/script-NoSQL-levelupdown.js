@@ -15,17 +15,17 @@ db.put("fr", "FRANCE");
 db.put("gr", "GERMANY");
 
 app.get("/list", (q, r) => {
-    let dd = "";
+    let dd = [];
     db.createValueStream({ keys: false, values: true })
         .on('data', (data) => {
             console.log(data + "");
-            dd += data + ",";
+            dd.push(data+"");
         }).on('error', (err) => {
-            r.send(dd);
+            r.send(dd.join(" - "));
         }).on('close', () => {
-            r.send(dd);
+            r.send(dd.join(" - "));
         }).on('end', () => {
-            r.send(dd);
+            r.send(dd.join(" - "));
         });
 });
 
