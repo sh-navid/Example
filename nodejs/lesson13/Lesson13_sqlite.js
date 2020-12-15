@@ -1,5 +1,4 @@
 //Node 14.15.1 LTS
-//SQlite
 
 const exp = require("express");
 const app = exp();
