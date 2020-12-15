@@ -98,6 +98,16 @@ let run = async () => {
     await LessonTable.create({ ID: 8, Name: "Lesson CA_1", CourseID: 5 });
     await LessonTable.create({ ID: 9, Name: "Lesson CA_2", CourseID: 5 });
 
+    await findAll();
+    await removeLevel(1);
+    await removeLevel(2);
+    await findAll();
+    await findAllLessons();
+    await updateLesson(9, "Lesson KK_1");
+    await findAllLessons();
+}
+
+let findAll = async () => {
     const { count, rows } = await LevelTable.findAndCountAll({
         where: {},
         order: [
@@ -118,7 +128,7 @@ let run = async () => {
             },
         ]
     });
-    console.log("______________");
+    console.log("_______ALL DATA BASE_______");
     console.log("Count: ", count);
     rows.forEach(level => {
         console.log(level.dataValues.Name);
@@ -129,6 +139,35 @@ let run = async () => {
             });
         });
     });
+}
+
+let findAllLessons = async () => {
+    const { count, rows } = await LessonTable.findAndCountAll({
+        where: {}
+    });
+    console.log("_______ALL LESSONS_______");
+    console.log("Count: ", count);
+    rows.forEach(lesson => {
+        console.log(lesson.dataValues.Name);
+    });
+}
+
+let removeLevel = async (_id) => {
+    let res = await LevelTable.destroy({
+        where: {
+            ID: _id
+        }
+    });
+    console.log("Number of removed records: ", res);
+}
+
+let updateLesson = async (_id, _newName) => {
+    let res = await LessonTable.update({ Name: _newName }, {
+        where: {
+            ID: _id
+        }
+    });
+    console.log("Number of updated records: ", res);
 }
 
 run();
