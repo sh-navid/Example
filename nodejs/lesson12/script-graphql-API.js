@@ -70,10 +70,11 @@ let root = {
 app.get("/gql/:gql", (q, r) => {
     //{user{name,emails{name}}}
     //{user{id,name}}
-    //
+    //{find(id:1){name}}
     graphql(schema, q.params.gql/*{user{name}}*/, root).then((res) => {
         r.send(res);
     });
 });
+
 
 app.listen(3000);
