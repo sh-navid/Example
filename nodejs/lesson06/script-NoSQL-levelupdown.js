@@ -19,20 +19,20 @@ app.get("/list", (q, r) => {
     db.createValueStream({ keys: false, values: true })
         .on('data', (data) => {
             console.log(data + "");
-            dd.push(data+"");
+            dd.push(data + "");
         }).on('error', (err) => {
-            r.send(dd.join(" - "));
+            return r.send(dd.join(" - "));
         }).on('close', () => {
-            r.send(dd.join(" - "));
+            return r.send(dd.join(" - "));
         }).on('end', () => {
-            r.send(dd.join(" - "));
+            return r.send(dd.join(" - "));
         });
 });
 
 app.get("/select/:key", (q, r) => {
     db.get(q.params.key, (err, val) => {
         if (err)
-            r.send("NOT EXISTS");
+            return r.send("NOT EXISTS");
         r.send(val + "");
     });
 });
@@ -46,7 +46,7 @@ app.get("/upsert/:key/:val", (q, r) => {
 app.get("/delete/:key", (q, r) => {
     db.del(q.params.key, (err) => {
         if (err)
-            r.send("CANT DELETE");
+            return r.send("CANT DELETE");
         r.send(q.params.key + " DELETED");
     });
 });
