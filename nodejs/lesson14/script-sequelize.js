@@ -55,23 +55,23 @@ let LessonTable = seq.define('Lesson', {
     },
 });
 
-// //-----------CONSTRAINTS--------------
-// LevelTable.hasMany(CourseTable, {
-//     foreignKey: 'LevelID'
-// });
-//
-// CourseTable.belongsTo(LevelTable, {
-//     foreignKey: 'LevelID'
-// });
-//
-// //-----------CONSTRAINTS--------------
-// CourseTable.hasMany(LessonTable, {
-//     foreignKey: 'CourseID'
-// });
-//
-// LessonTable.belongsTo(CourseTable, {
-//     foreignKey: 'CourseID'
-// });
+//-----------CONSTRAINTS--------------
+LevelTable.hasMany(CourseTable, {
+    foreignKey: 'LevelID'
+});
+
+CourseTable.belongsTo(LevelTable, {
+    foreignKey: 'LevelID'
+});
+
+//-----------CONSTRAINTS--------------
+CourseTable.hasMany(LessonTable, {
+    foreignKey: 'CourseID'
+});
+
+LessonTable.belongsTo(CourseTable, {
+    foreignKey: 'CourseID'
+});
 
 let run = async () => {
     await LevelTable.sync({ force: FORCE_DATABASE_UPDATE });
@@ -99,14 +99,36 @@ let run = async () => {
     await LessonTable.create({ ID: 9, Name: "Lesson CA_2", CourseID: 5 });
 
     const { count, rows } = await LevelTable.findAndCountAll({
-
+        where: {},
+        order: [
+            ['ID', 'ASC'],
+        ],
+        include: [
+            {
+                model: CourseTable,
+                where: {},
+                separate: true,
+                include: [
+                    {
+                        model: LessonTable,
+                        where: {},
+                        separate: true,
+                    }
+                ]
+            },
+        ]
     });
-    console.log(count);
-    rows.forEach(el => {
-        console.log("___________");
-        console.log(el.dataValues);
+    console.log("______________");
+    console.log("Count: ", count);
+    rows.forEach(level => {
+        console.log(level.dataValues.Name);
+        level.Courses.forEach(course => {
+            console.log("---", course.dataValues.Name);
+            course.Lessons.forEach(lesson => {
+                console.log("------", lesson.dataValues.Name);
+            });
+        });
     });
-
 }
 
 run();
