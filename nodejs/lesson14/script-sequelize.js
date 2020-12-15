@@ -56,23 +56,23 @@ let LessonTable = seq.define(DB_TABLE_SEED + 'Lesson', {
     },
 });
 
-//-----------CONSTRAINTS--------------
-LevelTable.hasMany(CourseTable, {
-    foreignKey: 'LevelID'
-});
+// //-----------CONSTRAINTS--------------
+// LevelTable.hasMany(CourseTable, {
+//     foreignKey: 'LevelID'
+// });
 
-CourseTable.belongsTo(LevelTable, {
-    foreignKey: 'LevelID'
-});
+// CourseTable.belongsTo(LevelTable, {
+//     foreignKey: 'LevelID'
+// });
 
-//-----------CONSTRAINTS--------------
-CourseTable.hasMany(LessonTable, {
-    foreignKey: 'LevelID'
-});
+// //-----------CONSTRAINTS--------------
+// CourseTable.hasMany(LessonTable, {
+//     foreignKey: 'CourseID'
+// });
 
-LessonTable.belongsTo(CourseTable, {
-    foreignKey: 'LevelID'
-});
+// LessonTable.belongsTo(CourseTable, {
+//     foreignKey: 'CourseID'
+// });
 
 let run = async () => {
     await LevelTable.sync({ force: FORCE_DATABASE_UPDATE });
@@ -98,6 +98,10 @@ let run = async () => {
     await LessonTable.create({ ID: 5, Name: "Lesson BB_1", CourseID: 4 });
     await LessonTable.create({ ID: 5, Name: "Lesson CA_1", CourseID: 5 });
     await LessonTable.create({ ID: 5, Name: "Lesson CA_2", CourseID: 5 });
+
+    let res;
+    res = await LessonTable.findByPk(2);
+    console.log(res);
 }
 
 run();
