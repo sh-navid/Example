@@ -9,7 +9,7 @@ const app = exp();
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const seq = new Sequelize('db', '', '', {
     host: 'localhost',
-    storage: 'db.sqlite',
+    storage: 'nodejs/data/db.sqlite',
     dialect: 'sqlite',
 });
 
