@@ -3,7 +3,6 @@
 
 const exp = require("express");
 const app = exp();
-const pth = require("path");
 
 //yarn add sqlite3
 //yarn add sequelize
