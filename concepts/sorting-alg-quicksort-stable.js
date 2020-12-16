@@ -16,6 +16,7 @@ QuickSort = (arr, low, high) => {
     return arr;
 }
 
+
 let Partition = (arr, low, high) => {
     let pivot = arr.A[high];
     let index = arr.I[high];
