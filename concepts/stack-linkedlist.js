@@ -1,3 +1,5 @@
+//to make new instance of "Node",
+//you should define it with "function"
 function Node() {
     this.data = null;
     this.next = null;
