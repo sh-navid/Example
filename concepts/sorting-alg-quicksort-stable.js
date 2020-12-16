@@ -17,7 +17,6 @@ QuickSort = (arr, low, high) => {
 }
 
 let Partition = (arr, low, high) => {
-    //console.log("Partition This: ", arr.A);
     let pivot = arr.A[high];
     let index = arr.I[high];
     let i = low;
@@ -41,6 +40,3 @@ let arr = {
 };
 let res = QuickSort(arr, 0, arr.A.length - 1);
 console.log(res);
-
-console.log(34*influencer);
-console.log(35*influencer);
