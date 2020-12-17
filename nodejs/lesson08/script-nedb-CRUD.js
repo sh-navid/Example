@@ -73,6 +73,4 @@ app.get("/insert/:id/:name/", (q, r) => {
     });
 });
 
-
-console.log("Lesson 08");
 app.listen(3000);
