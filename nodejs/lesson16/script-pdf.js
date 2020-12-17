@@ -13,11 +13,14 @@ const phantom = require('phantom');
 const ip = require("ip");
 
 const PORT = 3000;
-const PDF_SOURCE = "index";//index.html
-const PDF_OUTPUT = "output";//output.pdf
+const PDF_SOURCE = "index"; //index.html
+const PDF_OUTPUT = "out"; //out.pdf
 
-app.use("/" + PDF_SOURCE, exp.static(pth.join(__dirname, "", PDF_SOURCE + ".html")));
-app.use("/" + PDF_OUTPUT, exp.static(pth.join(__dirname, "", PDF_OUTPUT + ".pdf")));
+const source = pth.join(__dirname, "", `${PDF_SOURCE}.html`);
+const output = pth.join(__dirname, "", `${PDF_OUTPUT}.pdf`);
+
+app.use("/" + PDF_SOURCE, exp.static(source));
+app.use("/" + PDF_OUTPUT, exp.static(output));
 
 app.listen(PORT);
 
@@ -26,7 +29,7 @@ let makePDF = async (fn) => {
     phantom.create().then((ph) => {
         ph.createPage().then((page) => {
             page.open(local).then(() =>
-                page.render(`${PDF_OUTPUT}.pdf`).then(() => { ph.exit(); fn() })
+                page.render(output).then(() => { ph.exit(); fn() })
             );
         });
     });
