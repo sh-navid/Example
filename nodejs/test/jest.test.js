@@ -3,6 +3,8 @@
 
 //npm run test
 
+//https://github.com/sh-navid/SoftwarePrinciples/blob/main/Tools/jest.test.js
+
 test('Test with JEST', () => {
     expect(1 + 1).toEqual(2);
     expect(1 === 1).toBe(true);
