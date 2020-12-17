@@ -24,6 +24,7 @@
     "levelup": "^4.4.0",
     "nedb": "^1.8.0",
     "pdfkit": "^0.11.0",
+    "phantom": "^6.3.0",
     "sequelize": "^6.3.5",
     "socket.io": "^3.0.4",
     "sqlite3": "^5.0.0"
