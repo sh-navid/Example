@@ -4,8 +4,9 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * Created by sh-navid on 11/11/2015.
- * Updated by sh-navid on 30/11/2020.
+ * Created by   sh-navid    on 11/11/2015.
+ * Updated by   sh-navid    on 30/11/2020.
+ * Publised by  sh-navid    on 22/12/2020.
  */
 @SuppressWarnings("unused")
 public abstract class FreshView extends View  {
