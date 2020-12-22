@@ -9,7 +9,7 @@ app.get("/html", (q, r) => {
 });
 
 app.get("/file/sync", (q, r) => {
-    let data = fs.readFileSync("nodejs/lesson04/index.html");
+    let data = fs.readFileSync("nodejs/lesson02/index.html");
 
     data += "";
     data = data.split("{{data}}").join("SYNC");
@@ -20,7 +20,7 @@ app.get("/file/sync", (q, r) => {
 });
 
 app.get("/file/async", (q, r) => {
-    fs.readFile("nodejs/lesson04/index.html", (err, data) => {
+    fs.readFile("nodejs/lesson02/index.html", (err, data) => {
         data += "";
         data = data.split("{{data}}").join("A-SYNC");
 
@@ -33,7 +33,7 @@ app.get("/file/async", (q, r) => {
 let html = "";
 app.get("/file/:title", (q, r) => {
     if (html === "") {
-        html = fs.readFileSync("nodejs/lesson04/index.html");
+        html = fs.readFileSync("nodejs/lesson02/index.html");
         console.log("File Loaded");
     }
 
