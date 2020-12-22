@@ -50,4 +50,4 @@ JFX WebView Example
 
 ## Android
 
-FreshView, I wrote this back in 2014-2015 to make a looper for games.
+FreshView, *I wrote this back in 2014-2015 to make a looper for games*.
