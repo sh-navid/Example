@@ -4,3 +4,8 @@ yarn.lock
 nodejs/data
 nodejs/data/*
 *.pdf
+*.exe
+*.class
+*.PNG
+*.JPG
+*.JPEG
