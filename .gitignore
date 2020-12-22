@@ -9,3 +9,4 @@ nodejs/data/*
 *.PNG
 *.JPG
 *.JPEG
+.vscode

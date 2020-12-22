@@ -9,10 +9,6 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Map;
 
-
-//VSCode: Install Maven for JAVA
-
-
 public class WebViewExample extends Application {
     @Override
     public void start(Stage primaryStage) {
