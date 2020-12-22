@@ -46,4 +46,4 @@ Image Blender
 
 ## Java
 
-Simple WebView
+JFX WebView Example
