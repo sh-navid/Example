@@ -28,6 +28,7 @@
     "phantom": "^6.3.0",
     "sequelize": "^6.3.5",
     "socket.io": "^3.0.4",
-    "sqlite3": "^5.0.0"
+    "sqlite3": "^5.0.0",
+    "validator": "^13.5.2"
   }
 }
