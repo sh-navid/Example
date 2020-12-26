@@ -40,6 +40,8 @@ Multi File Uploader
 
 JEST - Unit Testing
 
+Validator
+
 ## Python
 
 Image Blender
