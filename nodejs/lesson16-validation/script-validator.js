@@ -2,10 +2,15 @@
 
 const val = require('validator');
 
-//banking
-//--swift   -> isBIC()
-//--BTC     -> isBtcAddress()
-//--Credit  -> isCreditCard()
+//Banking
+// -> isBIC(/*SWIFT*/), isBtcAddress(), isCreditCard(), isEthereumAddress()
+
+//Other
+// -> isDate(), isDecimal(), isBoolean(), isFloat()
+
+//Hash
+//'md4', 'md5', 'sha1', 'sha256', 'sha384', 'sha512', 'ripemd128', 'ripemd160', 'tiger128', 'tiger160', 'tiger192', 'crc32', 'crc32b'
+// -> isHash();
 
 console.log(val.isEmail('aa@bb.com'),"This is an email");
 
@@ -21,10 +26,4 @@ console.log(val.isAlphanumeric("سس","fa-IR"),"Is Alphanumeric");
 
 console.log(val.isAscii("AaBb"),"Is Ascii");
 
-console.log(val.isBase64("aGVsbG8="),"Is isBase64");
-
-console.log(val.isBase64("aGVsbG8="),"Is isBase64");
-console.log(val.isBase64("aGVsbG8="),"Is isBase64");
-console.log(val.isBase64("aGVsbG8="),"Is isBase64");
-console.log(val.isBase64("aGVsbG8="),"Is isBase64");
 console.log(val.isBase64("aGVsbG8="),"Is isBase64");
