@@ -1,6 +1,27 @@
 # Practice
 
 
+## Software Principles
+
+Merged from another deleted repository of mine.
+
+Test principles, design patterns, etc
+
+These links helped me so much to implement design patterns: 
+
+https://www.dofactory.com/javascript/design-patterns/bridge 
+
+https://www.tutorialspoint.com/design_pattern/ 
+
+https://en.wikipedia.org/wiki/SOLID 
+
+https://en.wikipedia.org/wiki/GRASP_%28object-oriented_design%29 
+
+https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+
+These helped me for tests: https://blog.eduonix.com/mobile-programming/testing-nodejs-apps-jest/
+
+
 ## NodeJS
 
 
