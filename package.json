@@ -18,7 +18,9 @@
     "commander": "^6.2.1",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "fontforge": "^0.0.4",
     "graphql": "^15.4.0",
+    "gulp": "^4.0.2",
     "ip": "^1.1.5",
     "jest": "^26.6.3",
     "leveldown": "^5.6.0",
@@ -30,5 +32,9 @@
     "socket.io": "^3.0.4",
     "sqlite3": "^5.0.0",
     "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "gulp-svg2ttf": "^2.0.1",
+    "webfont": "^9.0.0"
   }
 }
