@@ -5,7 +5,7 @@ const pth = require("path");
 const fs = require("fs");
 
 //make "export" folder manually if not exists
-const EXPORT = pth.join(__dirname, "export", "IF");
+const EXPORT = pth.join(__dirname, "export", "MF");
 
 console.log(EXPORT);
 
