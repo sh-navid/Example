@@ -42,6 +42,8 @@ JEST - Unit Testing
 
 Validator
 
+Generate Fonts
+
 ## Python
 
 Image Blender
