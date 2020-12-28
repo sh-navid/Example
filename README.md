@@ -67,12 +67,18 @@ Generate Fonts
 
 ## NodeJS Security Tips
 
+**Check this link later**
 https://blog.risingstack.com/node-js-security-tips/
 
 https://github.com/helmetjs/helmet
 
 check CSP attacks with this tool:
 https://csp-evaluator.withgoogle.com/
+
+**Check this link later**
+https://github.com/toolness/security-adventure
+
+https://www.slideshare.net/d0cent/nodejs-security?qid=c450507b-e491-4e9a-9b05-89d0c82ea10b&v=default&b=&from_search=6
 
 ## Python
 

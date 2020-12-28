@@ -1,3 +1,5 @@
+"use strict"; //for security always use strict
+
 //Node 14.15.1 LTS
 
 const exp = require("express");
@@ -64,4 +66,4 @@ app.get("/delete/:key", (q, r) => {
     });
 });
 
-app.listen(3000);
+app.listen(3001);

@@ -1,3 +1,5 @@
+"use strict"; //for security always use strict
+
 //Node 14.15.1 LTS
 //Commander
 

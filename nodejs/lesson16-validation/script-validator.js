@@ -1,3 +1,6 @@
+//Node 14.15.3 LTS
+"use strict"; //for security always use strict
+
 //npm install validator
 
 const val = require('validator');
