@@ -80,6 +80,8 @@ https://github.com/toolness/security-adventure
 
 https://www.slideshare.net/d0cent/nodejs-security?qid=c450507b-e491-4e9a-9b05-89d0c82ea10b&v=default&b=&from_search=6
 
+use JSHint/JSLint
+
 ## Python
 
 Image Blender
