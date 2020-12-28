@@ -25,11 +25,7 @@ These helped me for tests: https://blog.eduonix.com/mobile-programming/testing-n
 ## NodeJS
 
 
-Init
-
-Express
-
-Params
+Init, Express, Params, Middleware
 
 File
 
@@ -41,17 +37,13 @@ Callback, Promise
 
 NEDB
 
-Middleware
-
 Socket.IO
 
 ServerSideRendering (SSR) - EJS
 
 GraphQL
 
-SQLite
-
-Sequelize
+SQLite, Sequelize
 
 Commander
 
@@ -80,9 +72,9 @@ https://github.com/toolness/security-adventure
 
 https://www.slideshare.net/d0cent/nodejs-security?qid=c450507b-e491-4e9a-9b05-89d0c82ea10b&v=default&b=&from_search=6
 
-use JSHint/JSLint
+**use** JSHint/JSLint
 
-**what should we log**
+**What should we log**
 https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html
 
 
