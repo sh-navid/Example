@@ -71,6 +71,9 @@ https://blog.risingstack.com/node-js-security-tips/
 
 https://github.com/helmetjs/helmet
 
+check CSP attacks with this tool:
+https://csp-evaluator.withgoogle.com/
+
 ## Python
 
 Image Blender
