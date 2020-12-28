@@ -82,6 +82,10 @@ https://www.slideshare.net/d0cent/nodejs-security?qid=c450507b-e491-4e9a-9b05-89
 
 use JSHint/JSLint
 
+**what should we log**
+https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html
+
+
 ## Python
 
 Image Blender
