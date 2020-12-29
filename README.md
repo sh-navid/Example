@@ -99,3 +99,9 @@ JFX WebView Example
 ## Android
 
 FreshView, *I wrote this back in 2014-2015 to make a looper for games*.
+
+## PHP
+
+**Learn from this section later**
+
+https://www.w3schools.com/php/php_constants.asp
