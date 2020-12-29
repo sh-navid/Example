@@ -4,11 +4,9 @@ $x = 12;
 $y = 140;
 $z = 600;
 
-
-
 function fn_print()
 {
-    static $q = 90;//static in memory
+    static $q = 90; //static in memory
     global $x;
     $y = 14;
 
@@ -24,4 +22,6 @@ fn_print();
 fn_print();
 fn_print();
 
-echo "OUT OF FUNCTION " . $x . " " . $y . " " . $z . "\n";
+print "OUT OF FUNCTION " . $x . " " . $y . " " . $z . "\n";
+
+//print and echo
