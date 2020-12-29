@@ -78,6 +78,7 @@ https://www.slideshare.net/d0cent/nodejs-security?qid=c450507b-e491-4e9a-9b05-89
 **What should we log**
 https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html
 
+The JWT Should stay in cookies with httpOnly
 
 ## Python
 

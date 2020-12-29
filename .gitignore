@@ -13,8 +13,8 @@ nodejs/data/*
 
 .vscode
 
-*.svg
-*.ttf
+.svg
+.ttf
 *.woff
 *.woff2
 *.eot
