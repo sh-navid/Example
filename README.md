@@ -55,7 +55,7 @@ JEST - Unit Testing
 
 Validator
 
-Generate Fonts
+Font Generator and my own custom FontIcon
 
 ## NodeJS Security Tips
 
@@ -77,6 +77,9 @@ https://www.slideshare.net/d0cent/nodejs-security?qid=c450507b-e491-4e9a-9b05-89
 **Check this link later**
 **What should we log**
 https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html
+
+**Check this link later**
+https://expressjs.com/en/resources/middleware/csurf.html
 
 The JWT Should stay in cookies with httpOnly
 
