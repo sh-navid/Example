@@ -72,8 +72,6 @@ https://github.com/toolness/security-adventure
 
 https://www.slideshare.net/d0cent/nodejs-security?qid=c450507b-e491-4e9a-9b05-89d0c82ea10b&v=default&b=&from_search=6
 
-**use** JSHint/JSLint
-
 **Check this link later**
 **What should we log**
 https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html
@@ -81,7 +79,14 @@ https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html
 **Check this link later**
 https://expressjs.com/en/resources/middleware/csurf.html
 
-The JWT Should stay in cookies with httpOnly
+**Check this link later**
+https://github.com/expressjs/csurf
+
+**Check this link later**
+https://levelup.gitconnected.com/deriving-signing-and-verifying-a-jwt-json-web-token-with-node-js-f3d0d12b1fc9
+
+**Check this link later**
+https://github.com/pillarjs/understanding-csrf
 
 ## Python
 
