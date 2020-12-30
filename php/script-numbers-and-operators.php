@@ -47,4 +47,12 @@ echo ((false xor false) ? "TRUE" : "FALSE") . " false xor false " . "\n";
 echo (null ?? "Exp2") . " null ?? Exp2 " . "\n";
 echo ("Exp1" ?? "Exp2") . " Exp1 ?? EXP2 " . "\n";
 echo ("Exp1" ?? null) . " Exp1 ?? null " . "\n";
-echo (null ?? null) === null ? "Is NULL" : "Not NULL" . " null ?? null " . "\n";
+echo (null ?? null) === null ?
+"null ?? null Is NULL \n" :
+"null ?? null Not NULL \n";
+
+if (1 != 1) {
+    echo "IF";
+} elseif (2 == 2) {//both elseif and else if should work
+    echo "ELSE IF";
+}
