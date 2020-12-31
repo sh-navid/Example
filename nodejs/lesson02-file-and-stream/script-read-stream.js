@@ -8,7 +8,6 @@ let data = '';
 const readerStream = fs.createReadStream(pth.join(__dirname, "index.html"));
 readerStream.setEncoding('UTF8');
 
-// Handle stream events --> data, end, and error
 readerStream.on('data', (chunk) => {
     data += chunk;
 });

@@ -1,6 +1,9 @@
 //Node 14.15.3 LTS
 'use strict';
 
+//NOTE: I THINK THIS IS A BAD PRACTICE
+//YOU SHOULD USE STREAM INSTEAD OF BUFFERING
+
 const fss = require('fs')
 const pth = require('path');
 const exp = require('express');
