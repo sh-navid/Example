@@ -27,13 +27,13 @@ These helped me for tests: https://blog.eduonix.com/mobile-programming/testing-n
 
 Init, Express, Params, Middleware
 
-File
+File, Stream
 
 CRUD
 
 NoSQL - Level
 
-Callback, Promise
+Callback, Promise, EventEmmiter
 
 NEDB
 
