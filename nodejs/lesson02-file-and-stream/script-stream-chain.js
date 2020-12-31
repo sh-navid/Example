@@ -11,9 +11,4 @@ let writerStream2 = fs.createWriteStream(pth.join(__dirname, "chain2.html"));
 readerStream.pipe(writerStream);
 readerStream2.pipe(writerStream);
 
-readerStream
-    .pipe(writerStream)
-    .pipe(writerStream2);
-
-
 console.log("Chained");
