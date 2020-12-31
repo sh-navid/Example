@@ -25,6 +25,7 @@
     "jest": "^26.6.3",
     "leveldown": "^5.6.0",
     "levelup": "^4.4.0",
+    "multistream": "^4.0.1",
     "nedb": "^1.8.0",
     "pdfkit": "^0.11.0",
     "phantom": "^6.3.0",
