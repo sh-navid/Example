@@ -1,13 +1,19 @@
-var fs = require("fs");
+const fs = require("fs");
 const pth = require("path");
 
-var readerStream = fs.createReadStream(pth.join(__dirname, "index.html"));
-var readerStream2 = fs.createReadStream(pth.join(__dirname, "index.html"));
-var writerStream = fs.createWriteStream(pth.join(__dirname, "chained.html"));
+let readerStream = fs.createReadStream(pth.join(__dirname, "index.html"));
+let readerStream2 = fs.createReadStream(pth.join(__dirname, "index.html"));
+let writerStream = fs.createWriteStream(pth.join(__dirname, "chain1.html"));
+let writerStream2 = fs.createWriteStream(pth.join(__dirname, "chain2.html"));
 
 //only readable streams have "pipe" method
 
 readerStream.pipe(writerStream);
 readerStream2.pipe(writerStream);
+
+readerStream
+    .pipe(writerStream)
+    .pipe(writerStream2);
+
 
 console.log("Chained");
