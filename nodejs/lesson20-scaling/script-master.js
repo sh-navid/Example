@@ -6,8 +6,11 @@ const pth = require("path");
 //spawn -> run a new process
 //fork  -> run a node process
 
-for (var i = 0; i < 5; i++) {
-    var workerProcess = ch.fork(pth.join(__dirname, "script-child.js"), [i]);
+let x = [12, 13, 14, 15];
+let y = [15, 14, 13, 12];
+
+for (var i = 0; i < x.length; i++) {
+    var workerProcess = ch.fork(pth.join(__dirname, "script-child.js"), [i,x[i],y[i]]);
 
     workerProcess.on('exit', (code) => {
         //console.log('Exit ' + code);
