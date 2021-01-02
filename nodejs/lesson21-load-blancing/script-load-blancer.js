@@ -1,6 +1,6 @@
 "use strict";
 
-//to kill all other nodejs instances in windows use this:
+//to kill all other nodejs instances:
 //taskkill /im node.exe /F
 
 const exp = require("express");
