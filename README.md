@@ -25,7 +25,7 @@ These helped me for tests: https://blog.eduonix.com/mobile-programming/testing-n
 ## NodeJS
 
 
-Init, Express, Params, Middleware
+Init, Express, Router, Params, Middleware
 
 File, Stream
 
@@ -112,3 +112,6 @@ https://www.w3schools.com/php/php_constants.asp
 
 https://eliya-b.medium.com/design-a-solid-mvc-rest-api-with-node-js-express-and-orm-part-1-aae2332ca3c6
 
+https://restfulapi.net/
+
+https://www.cronj.com/blog/mvc-architecture-in-node-js/
