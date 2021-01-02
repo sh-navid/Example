@@ -112,24 +112,3 @@ https://www.w3schools.com/php/php_constants.asp
 
 https://eliya-b.medium.com/design-a-solid-mvc-rest-api-with-node-js-express-and-orm-part-1-aae2332ca3c6
 
-+--------+-------------+------------+
-
-| CRUD   | In Database | In RestAPI |
-
-+--------+-------------+------------+
-
-| CREATE | INSERT      | POST       |
-
-+--------+-------------+------------+
-
-| READ   | SELECT      | GET        |
-
-+--------+-------------+------------+
-
-| UPDATE | UPDATE      | PUT        |
-
-+--------+-------------+------------+
-
-| DELETE | DELETE      | DELETE     |
-
-+--------+-------------+------------+

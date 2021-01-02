@@ -1,6 +1,22 @@
 "use strict"; //for security always use strict
 //Node 14.15.1 LTS
 
+/*
+
++--------+-------------+------------+
+| CRUD   | In Database | In RestAPI |
++--------+-------------+------------+
+| CREATE | INSERT      | POST       |
++--------+-------------+------------+
+| READ   | SELECT      | GET        |
++--------+-------------+------------+
+| UPDATE | UPDATE      | PUT        |
++--------+-------------+------------+
+| DELETE | DELETE      | DELETE     |
++--------+-------------+------------+
+
+*/
+
 const exp = require("express");
 const app = exp();
 const pth = require("path");
