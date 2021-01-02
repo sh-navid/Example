@@ -21,3 +21,6 @@ rtr.route("/user/:id")
     .delete((q, r, n) => { r.send("DELETE USER " + q.params.id); n(); });
 
 module.exports = app;//seems that is a good idea; i am not sure
+
+//api/user/id
+app.use("/api",rtr);//should be after defining the router
