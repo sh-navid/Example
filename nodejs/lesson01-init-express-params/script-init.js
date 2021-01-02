@@ -4,6 +4,9 @@
 //npm init
 //npm install
 
+//make nodejs project using name of folder without any questions
+//npm init -y
+
 //to kill all other nodejs instances in windows use this:
 //taskkill /im node.exe /F
 
